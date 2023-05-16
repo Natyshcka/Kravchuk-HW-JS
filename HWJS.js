@@ -1,12 +1,12 @@
 // 1-----------------------------------------------------------------------------
-let hamburger = 3;
+let hamburger = 2;
 let fries = 1;
 
 if(hamburger == 3 && fries == 1){
 console.log('Ми поїли')
 }
 
-if(hamburger <= 3 && fries == 1){
+else if(hamburger <= 3 && fries == 1){
 console.log('Ми ідемо в інше кафе')}
 
 //2----------------------------------------------------------------------------------
@@ -119,12 +119,24 @@ console.log(result);
 let word = 'Turkiye';
 let RegEx = word.replace(/[uie]/gi, '');
 console.log(RegEx);
-
+ 
 //9-----------------------------------------------------------------------------------
-let distanceinmetrs = 50
-let distanceincantimtrs = distanceinmetrs * 100;
-console.log (distanceincantimtrs)
-if(distanceincantimtrs >= 100) {
-    console.log(`${distanceinmetrs} метрів відповідає ${distanceincantimtrs} сантиметрам`);
-  }
-
+let meters = 2000;
+let kilometers = meters / 1000;
+let meterSuffix = "";
+if (meters % 10 == 1 && meters % 100 != 11) {
+    meterSuffix = "";
+} else if (meters % 10 >= 2 && meters % 10 <= 4 && (meters % 100 < 10 || meters % 100 >= 20)) {
+    meterSuffix = "и";
+} else {
+    meterSuffix = "ів";
+}
+let kilometerSuffix = "";
+if (kilometers % 10 == 1 && kilometers % 100 != 11) {
+    kilometerSuffix = "";
+} else if (kilometers % 10 >= 2 && kilometers % 10 <= 4 && (kilometers % 100 < 10 || kilometers % 100 >= 20)) {
+    kilometerSuffix = "и";
+} else {
+    kilometerSuffix = "ів";
+}
+console.log(`${meters} метр${meterSuffix} це ${kilometers} кілометр${kilometerSuffix}`);
