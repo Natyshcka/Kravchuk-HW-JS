@@ -155,6 +155,29 @@ function removevowels(str) {
   let result1 = removevowels(word);
   console.log(result1);        
 //9............................................... 
+MetersInKiometrs = (meters) => {
+    MetersKilometrs = (meters) => {
+        return meters/1000
+    }
+    let kilometrs = MetersKilometrs(meters)
+    findsufixs = (num) => {
+        if(Number.isInteger(num)) {
+            let sufixs = num%10;
+            if (sufixs == 0 || (num%1 === 0 && num >= 11 && number <= 19)){
+                end = "ів"
+            } else if (sufixs == 1) {
+                end = ""
+            } else if (sufixs >= 2 && sufixs <= 4) {
+                end = "и"
+            } else if (sufixs >= 5 && sufixs <= 9) {
+                end = "iв"
+            }
+        } else {
+            end = "a"
+        }
+        return end
+    }
+    console.log(`${meters} метр${findsufixs(meters)} це ${kilometrs} кілометр${findsufixs(kilometrs)}`);
+}
 
-
-
+MetersInKiometrs(2000);
